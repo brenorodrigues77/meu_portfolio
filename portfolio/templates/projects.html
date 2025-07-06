@@ -1,23 +1,16 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+{% extends 'base.html' %}
+{% block title %}Projetos{% endblock %}
+{% block content %}
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Meus Projetos</title>
-</head>
+<section>
+  <h2>Meus Projetos</h2>
+  <ul>
+    {% for key, date in projects.items %}
+    <li>
+      <a href="{% url 'detail_project' project_id=key %}">{{ date.title }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
 
-<body>
-  <section>
-    <h2>Meus Projetos</h2>
-    <ul>
-      {% for key, date in projects.items %}
-      <li>
-        <a href="{% url 'detail_project' project_id=key %}">{{ date.title }}</a>
-      </li>
-      {% endfor %}
-    </ul>
-  </section>
-</body>
-
-</html>
+{% endblock %}
