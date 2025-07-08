@@ -1,55 +1,228 @@
-{% extends 'base.html' %}
-{% block title %}Home{% endblock %}
-{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'home.css' %}">
 
-<section>
-  <h1>
-    Desenvolvedor Fullstack Python | Foco em Backend, Dados e Inteligência
-    Artificial
-  </h1>
-  <p>
-    💻 Desenvolvedor entusiasta por transformar ideias em soluções eficientes e
-    escaláveis. Com 𝟭 𝗮𝗻𝗼 𝗲 𝟲 𝗺𝗲𝘀𝗲𝘀 de experiência prática no desenvolvimento de
-    sistemas, venho me especializando em Backend com Python
-  </p>
-  <p>
-    🤖 𝗜𝗻𝘁𝗲𝗹𝗶𝗴𝗲𝗻𝗰𝗶𝗮 𝗔𝗿𝘁𝗶𝗳𝗶𝗰𝗶𝗮𝗹 e Machine Learning: Atualmente, aprofundo meus
-    conhecimentos em IA e ML, com foco no desenvolvimento de sistemas baseados
-    em dados e na criação de Agentes de IA com LangChain. Busco integrar
-    inteligência às aplicações para torná-las mais autônomas e adaptáveis.
-  </p>
-  <p>
-    🛠 Desenvolvimento web: 𝗗𝗷𝗮𝗻𝗴𝗼 para criar aplicações web estruturadas com
-    regras de negócio bem definidas e Django REST Framework para desenvolver
-    APIs RESTful seguras e escaláveis. No frontend, trabalho com HTML, CSS e
-    Streamlit para interfaces simples e funcionais. Emprego Docker para
-    conteinerização e AWS na infraestrutura. Sigo princípios de POO e boas
-    práticas de arquitetura para manter código limpo e sustentável.
-  </p>
-  <p>
-    📊 Trabalho com dados e automações: Tenho sólida experiência em ETL, SQL e
-    análise de dados, utilizando 𝗣𝗮𝗻𝗱𝗮𝘀 e NumPy para processar, transformar e
-    extrair valor dos dados no PostgreSQL. Também aplico visualizações
-    interativas com Plotly, contribuindo para sistemas mais inteligentes e
-    guiados por dados.
-  </p>
-</section>
-<section>
-  <h2>Habilidades</h2>
-  <ul>
-    {% for key, date in skills.items %}
-    <li>{{ date.name }}</li>
-    {% endfor %}
-  </ul>
-</section>
-<section>
-  <h2>Contato</h2>
-  <p>
-    <a href="https://www.linkedin.com/in/breno-rodrigues77/">LinkedIn</a>
-  </p>
-  <p>
-    <a href="https://github.com/brenorodrigues77">GitHub</a>
-  </p>
-</section>
+<!DOCTYPE html>
+<html lang="pt-br">
 
-{% endblock %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breno Rodrigues - Desenvolvedor Fullstack Python</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">Meu Portfolio</h1>
+            <nav class="nav">
+                <a href="#home" class="nav-link active">Início</a>
+                <a href="#projects" class="nav-link">Projetos</a>
+                <a href="#contact" class="nav-link">Contato</a>
+            </nav>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        Desenvolvedor Fullstack Python | Foco em Backend, Dados e Inteligência Artificial
+                    </h1>
+                    <div class="hero-description">
+                        <p class="highlight-text">
+                            💻 Desenvolvedor entusiasta por transformar ideias em soluções eficientes e escaláveis.
+                            Com <strong>1 ano e 6 meses</strong> de experiência prática no desenvolvimento de sistemas,
+                            venho me especializando em Backend com Python.
+                        </p>
+
+                        <p>
+                            🤖 <strong>Inteligência Artificial</strong> e Machine Learning: Atualmente, aprofundo meus
+                            conhecimentos em IA e ML, com foco no desenvolvimento de sistemas baseados em dados e na
+                            criação de Agentes de IA com LangChain. Busco integrar inteligência às aplicações para
+                            torná-las mais autônomas e adaptáveis.
+                        </p>
+
+                        <p>
+                            🛠 Desenvolvimento web: <strong>Django</strong> para criar aplicações web estruturadas com
+                            regras de negócio bem definidas e Django REST Framework para desenvolver APIs RESTful
+                            seguras e escaláveis. No frontend, trabalho com HTML, CSS e Streamlit para interfaces
+                            simples e funcionais. Emprego Docker para conteinerização e AWS na infraestrutura.
+                        </p>
+
+                        <p>
+                            📊 Trabalho com dados e automações: Tenho sólida experiência em ETL, SQL e análise de dados,
+                            utilizando <strong>Pandas</strong> e NumPy para processar, transformar e extrair valor dos
+                            dados no PostgreSQL. Também aplico visualizações interativas com Plotly, contribuindo para
+                            sistemas mais inteligentes e guiados por dados.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="skills">
+            <div class="container">
+                <h2 class="section-title">Habilidades</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <h3>Backend</h3>
+                        <ul>
+                            <li>Python</li>
+                            <li>Django</li>
+                            <li>Django REST Framework</li>
+                            <li>APIs RESTful</li>
+                        </ul>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Dados & IA</h3>
+                        <ul>
+                            <li>Pandas</li>
+                            <li>NumPy</li>
+                            <li>Inteligência Artificial</li>
+                            <li>Criação de Chatbots</li>
+                            <li>LangChain</li>
+                        </ul>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Banco de Dados</h3>
+                        <ul>
+                            <li>PostgreSQL</li>
+                            <li>SQLite</li>
+                            <li>ETL</li>
+                        </ul>
+                    </div>
+                    <div class="skill-card">
+                        <h3>DevOps & Cloud</h3>
+                        <ul>
+                            <li>Docker</li>
+                            <li>AWS</li>
+                            <li>Git</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects">
+            <div class="container">
+                <h2 class="section-title">Meus Projetos</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <h3>Sistema de Análise de Dados</h3>
+                        <p>Aplicação Django para análise e visualização de dados com Pandas e Plotly.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Django</span>
+                            <span class="tech-tag">Pandas</span>
+                            <span class="tech-tag">Plotly</span>
+                        </div>
+                        <a href="#" class="project-link">Ver no GitHub</a>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>API RESTful com Django</h3>
+                        <p>API robusta desenvolvida com Django REST Framework para gerenciamento de dados de cafeterias
+                            da cidade de curitiba.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Django</span>
+                            <span class="tech-tag">DRF</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                        </div>
+                        <a href="#" class="project-link">Ver no GitHub</a>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>Agente de IA com LangChain</h3>
+                        <p>Sistema inteligente desenvolvido com LangChain para conversa com os dados de arquivos e URLs.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">LangChain</span>
+                            <span class="tech-tag">Streamlit</span>
+                            <span class="tech-tag">IA</span>
+                        </div>
+                        <a href="#" class="project-link">Ver no GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2 class="section-title">Contato</h2>
+                <div class="contact-content">
+                    <p>Vamos conversar sobre oportunidades e projetos!</p>
+                    <div class="contact-links">
+                        <a href="https://www.linkedin.com/in/breno7/" class="contact-link" target="_blank">
+                            <span class="contact-icon">💼</span>
+                            LinkedIn
+                        </a>
+                        <a href="https://github.com/brenorodrigues77" class="contact-link" target="_blank">
+                            <span class="contact-icon">🐱</span>
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Portfolio desenvolvido por Breno Rodrigues</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const nav = document.querySelector('.nav');
+            const btn = document.querySelector('.mobile-menu-btn');
+            nav.classList.toggle('active');
+            btn.classList.toggle('active');
+        }
+
+        // Smooth scrolling para links internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Destacar link ativo na navegação
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
