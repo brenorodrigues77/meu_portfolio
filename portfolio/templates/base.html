@@ -1,20 +1,37 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{% block title %} Meu Portfolio {% endblock %}</title>
-  </head>
 
-  <body>
-    <header>
-      <h1>Meu Portfolio</h1>
-      <a href="{% url 'home' %}">Inicio</a>
-      <a href="{% url 'project' %}">Projetos</a>
-    </header>
-    <main>{% block content %} {% endblock %}</main>
-    <footer>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %} Meu Portfolio {% endblock %}</title>
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+      <h1 class="logo">Meu Portfolio</h1>
+      <nav class="nav">
+        <a href="#home" class="nav-link active">Início</a>
+        <a href="#projects" class="nav-link">Projetos</a>
+        <a href="#contact" class="nav-link">Contato</a>
+      </nav>
+      <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+  <main>
+    {% block content %}
+    {% endblock %}
+  </main>
+  <footer class="footer">
+    <div class="container">
       <p>&copy; 2025 Portfolio desenvolvido por Breno Rodrigues</p>
-    </footer>
-  </body>
+    </div>
+  </footer>
+</body>
+
 </html>
